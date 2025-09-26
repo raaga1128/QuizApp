@@ -15,7 +15,7 @@ const Login = () => {
 
   const handleLogin = async () => {
     try {
-      const response = await axios.post("http://localhost:8081/login", {
+      const response = await axios.post("http://localhost:8082/login", {
         username,
         password,
       });
@@ -47,11 +47,7 @@ const Login = () => {
       <div className="parent">
         <div className="left">
           <div className="column-1">
-            <img
-              className="logo"
-              src="assets/2.png"
-              alt="Description of the logo"
-            />
+          
             <span className="span">
               <h1 className="text">Sign in to </h1>
               <h2 className="text">Our Webpage Quiz project </h2>

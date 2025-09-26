@@ -12,7 +12,7 @@ const Home = () => {
   useEffect(() => {
     const fetchQuizes = async () => {
       try {
-        const response = await axios.get("http://localhost:8081/quizzes");
+        const response = await axios.get("http://localhost:8082/quizzes");
         setQuizes(response.data);
       } catch (error) {
         console.error("Error fetching quizes:", error);

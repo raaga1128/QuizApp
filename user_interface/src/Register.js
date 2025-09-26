@@ -23,7 +23,7 @@ const Register = () => {
     setLoading(true);
 
     try {
-      const response = await axios.post("http://localhost:8081/register", {
+      const response = await axios.post("http://localhost:8082/register", {
         email,
         username,
         phone,

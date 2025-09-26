@@ -1,0 +1,30 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    container_name: quizbuilder-backend
+    ports:
+      - "8081:8081"
+    restart: unless-stopped
+    networks:
+      - quiznet
+
+  frontend:
+    build:
+      context: ./USER_INTERFACE
+      dockerfile: Dockerfile
+    container_name: quizbuilder-frontend
+    ports:
+      - "3000:80"
+    restart: unless-stopped
+    depends_on:
+      - backend
+    networks:
+      - quiznet
+
+networks:
+  quiznet:
+    driver: bridge
